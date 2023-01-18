@@ -1,16 +1,11 @@
-# flutter_finance_app
+# Finance Mobile App UI
 
-A new Flutter project.
+This is a Finance app where you can manage your money.
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+![App Screenshot](https://cdn.dribbble.com/users/5261465/screenshots/14210557/media/59926a5895d53d6a9ad92175763f97a5.jpg?compress=1&resize=1200x900&vertical=top)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+❤️ Found this project useful?
+If you found this project useful, then please consider giving it a ⭐ on Github and sharing it with your friends via social media.
