@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_finance_app/theme/colors.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class TransectionPage extends StatefulWidget {
   const TransectionPage({super.key});
@@ -16,10 +13,13 @@ class _TransectionPageState extends State<TransectionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   leading: Icon(CupertinoIcons.back,color: black,),
-      //   actions: [Icon(CupertinoIcons.search,color: black,)],
-      //   backgroundColor: primary,elevation: 0,),
+      appBar: AppBar(
+        leading: const Icon(CupertinoIcons.back,color: black,),
+        actions: const[ Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Icon(CupertinoIcons.search,color: black,),
+        )],
+        backgroundColor: primary,elevation: 0,),
       backgroundColor: primary,
       body: getBody(),
     );
@@ -32,34 +32,34 @@ class _TransectionPageState extends State<TransectionPage> {
         child: SingleChildScrollView(
       child: Column(
         children: [
-          Container(
-            decoration: BoxDecoration(color: primary, boxShadow: [
-              BoxShadow(
-                  color: grey.withOpacity(0.01),
-                  spreadRadius: 10,
-                  blurRadius: 3)
-            ]),
-            child: Padding(
-              padding:
-                  EdgeInsets.only(top: 20, bottom: 25, right: 20, left: 20),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(CupertinoIcons.back),
-                      Icon(CupertinoIcons.search)
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(
+          // Container(
+          //   decoration: BoxDecoration(color: primary, boxShadow: [
+          //     BoxShadow(
+          //         color: grey.withOpacity(0.01),
+          //         spreadRadius: 10,
+          //         blurRadius: 3)
+          //   ]),
+          //   child: const Padding(
+          //     padding:
+          //         EdgeInsets.only(top: 20, bottom: 25, right: 20, left: 20),
+          //     child: Column(
+          //       children: [
+          //         Row(
+          //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //           children: [
+          //             Icon(CupertinoIcons.back),
+          //             Icon(CupertinoIcons.search)
+          //           ],
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
+          const SizedBox(
             height: 5,
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 25, right: 25, bottom: 20),
+          const Padding(
+            padding: EdgeInsets.only(left: 25, right: 25, bottom: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -84,13 +84,13 @@ class _TransectionPageState extends State<TransectionPage> {
            child: Column(children: [
             Row(children: [
                Container(              
-              padding: EdgeInsets.only(left:25,right: 25,top: 5,bottom: 5),
-              margin: EdgeInsets.symmetric(horizontal: 5),
+              padding: const EdgeInsets.only(left:25,right: 25,top: 5,bottom: 5),
+              margin: const EdgeInsets.symmetric(horizontal: 5),
               decoration: BoxDecoration(                
                   color:buttoncolor, borderRadius: BorderRadius.circular(25),
                  
                   ),
-              child: Center(
+              child: const Center(
                 child: Text(
                   "All",
                   style: TextStyle(
@@ -101,8 +101,8 @@ class _TransectionPageState extends State<TransectionPage> {
               ),
             ),
              Container(              
-              padding: EdgeInsets.only(left:25,right: 25,top: 5,bottom: 5),
-              margin: EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.only(left:25,right: 25,top: 5,bottom: 5),
+              margin: const EdgeInsets.symmetric(horizontal: 10),
               decoration: BoxDecoration(                
                   color:white, borderRadius: BorderRadius.circular(25),
                    boxShadow: [
@@ -125,8 +125,8 @@ class _TransectionPageState extends State<TransectionPage> {
               ),
             ),
              Container(              
-              padding: EdgeInsets.only(left:25,right: 25,top: 5,bottom: 5),
-              margin: EdgeInsets.symmetric(horizontal: 5),
+              padding: const EdgeInsets.only(left:25,right: 25,top: 5,bottom: 5),
+              margin: const EdgeInsets.symmetric(horizontal: 5),
               decoration: BoxDecoration(                
                   color:white, borderRadius: BorderRadius.circular(25),
                    boxShadow: [
@@ -151,8 +151,8 @@ class _TransectionPageState extends State<TransectionPage> {
             ],)
            ],),
          ),
-        Padding(
-            padding: const EdgeInsets.only(left: 25, right: 25, bottom: 20),
+        const Padding(
+            padding: EdgeInsets.only(left: 25, right: 25, bottom: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -171,7 +171,7 @@ class _TransectionPageState extends State<TransectionPage> {
                   children: [
                     Expanded(
                       child: Container(
-                        margin: EdgeInsets.only(
+                        margin: const EdgeInsets.only(
                           top: 10,
                           left: 25,
                           right: 25,
@@ -192,7 +192,7 @@ class _TransectionPageState extends State<TransectionPage> {
                               top: 10, bottom: 20, right: 20, left: 20),
                           child: Row(
                             children: [
-                              Container(
+                              const SizedBox(
                                 width: 50,
                                 height: 50,
                                 // decoration: BoxDecoration(
@@ -203,25 +203,25 @@ class _TransectionPageState extends State<TransectionPage> {
                                 child: Center(
                                     child: Icon(Icons.payment,color: mainFontColor,)),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Expanded(
-                                child: Container(
+                                child: SizedBox(
                                   width: (size.width - 90) * 0.7,
                                   child: Column(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(
+                                        const Text(
                                           "Payment",
                                           style: TextStyle(
                                               fontSize: 15,
                                               color: black,
                                               fontWeight: FontWeight.bold),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 5,
                                         ),
                                         Text(
@@ -234,20 +234,18 @@ class _TransectionPageState extends State<TransectionPage> {
                                       ]),
                                 ),
                               ),
-                              Expanded(
-                                child: Container(
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      Text(
-                                        "\$30.00",
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold,
-                                            color: black),
-                                      )
-                                    ],
-                                  ),
+                            const  Expanded(
+                                child:  Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      "\$30.00",
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold,
+                                          color: black),
+                                    )
+                                  ],
                                 ),
                               )
                             ],
@@ -264,12 +262,12 @@ class _TransectionPageState extends State<TransectionPage> {
                     Column(
                         children:[
                            Container(
-                              padding: EdgeInsets.only(left:25,right: 25,top: 5,bottom: 5),
-                              margin: EdgeInsets.symmetric(horizontal: 15),
+                              padding: const EdgeInsets.only(left:25,right: 25,top: 5,bottom: 5),
+                              margin: const EdgeInsets.symmetric(horizontal: 15),
                                 child: Container(
                                           width: 325,
                                           height: 325,
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                               
                                               image: DecorationImage(
                                                   image: NetworkImage(
@@ -283,12 +281,12 @@ class _TransectionPageState extends State<TransectionPage> {
                 ),
                  Container(
               
-              padding: EdgeInsets.all(16),
-              margin: EdgeInsets.all( 25),
+              padding: const EdgeInsets.all(16),
+              margin: const EdgeInsets.all( 25),
               decoration: BoxDecoration(
                 
                   color:buttoncolor, borderRadius: BorderRadius.circular(25)),
-              child: Center(
+              child: const Center(
                 child: Text(
                   "See Details",
                   style: TextStyle(
