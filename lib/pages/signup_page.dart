@@ -1,32 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_finance_app/pages/home_page.dart';
-import 'package:flutter_finance_app/pages/signup_page.dart';
+import 'package:flutter_finance_app/pages/email_verification.dart';
+import 'package:flutter_finance_app/pages/login_page.dart';
 import 'package:flutter_finance_app/theme/colors.dart';
 
 import '../widgets/auth_page_text.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignupPage extends StatefulWidget {
+  const SignupPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignupPageState extends State<SignupPage> {
   final TextEditingController _email =
       TextEditingController();
   TextEditingController password = TextEditingController();
- bool isSelected = false;
+  bool isSelected = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       backgroundColor: primary,
       body: getBody(),
     );
   }
 
   Widget getBody() {
+  //  var size = MediaQuery.of(context).size;
     return SafeArea(
         child: Center(
       child: Column(
@@ -34,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
           const SizedBox(
             height: 10,
           ),
-          Container(
+         Container(
             width: 150,
             height: 200,
             decoration: const BoxDecoration(
@@ -43,12 +44,11 @@ class _LoginPageState extends State<LoginPage> {
                     image: AssetImage('assets/logo1.png'),
                     fit: BoxFit.contain)),
           ),
-         
-         const Padding(
+
+          const Padding(
             padding:  EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: SmallText(text: 'Welcome back!!', size: 20),
+            child: SmallText(text: 'SIGN UP', size: 20),
           ),
-          
           Container(
               width: double.infinity,
               margin: const EdgeInsets.symmetric(horizontal: 25),
@@ -109,8 +109,9 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                   
                     TextFormField(
-                       validator: (password) {
+                      validator: (password) {
                             if (password!.isEmpty) {
                               return 'please enter Password';
                             } else {
@@ -125,7 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                           fontWeight: FontWeight.w500,
                           color: black),
                       decoration:  InputDecoration(
-                          prefixIcon:const Icon(Icons.lock_outline_rounded),
+                          prefixIcon: const Icon(Icons.lock_outline_rounded),
                           prefixIconColor: Colors.black,
                           suffixIcon: IconButton(
                               onPressed: () {
@@ -155,10 +156,10 @@ class _LoginPageState extends State<LoginPage> {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const HomePage(),
+                    builder: (context) => const EmailVerificationPage(),
                   ));
             },
             child: Container(
@@ -170,7 +171,7 @@ class _LoginPageState extends State<LoginPage> {
                   color:buttoncolor, borderRadius: BorderRadius.circular(25)),
               child: const Center(
                 child: Text(
-                  "Login",
+                  "Register",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
@@ -185,38 +186,31 @@ class _LoginPageState extends State<LoginPage> {
            Padding(
             padding:const EdgeInsets.only(left: 26.0, right: 26.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                TextButton(
-                 onPressed: () {
-                   Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SignupPage(),
-                  ));
-                 },
-                 child:const Text( "Signup",
+              const  Text(
+                  "Already have an account? ",
                   style: TextStyle(
-                      color: Colors.blueGrey,
+                      color: Colors.black,
                       fontSize: 15,
-                      fontWeight: FontWeight.w300),),
+                      fontWeight: FontWeight.w300),
                 ),
-              const  SizedBox(width: 8,),
-               TextButton(onPressed: () {
-                   Navigator.pushReplacement(
+                TextButton(onPressed: () {
+                  Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const SignupPage(),
+                    builder: (context) => const LoginPage(),
                   ));
-               },
-                 child: const Text(
-                    "Forgot password?",
+            
+                },
+                  child:const Text(
+                    "Login",
                     style: TextStyle(
-                        color: Colors.black,
+                        color: Colors.blueGrey,
                         fontSize: 15,
                         fontWeight: FontWeight.w300),
                   ),
-               ),
+                ),
               ],
             ),
           )
@@ -225,4 +219,3 @@ class _LoginPageState extends State<LoginPage> {
     ));
   }
 }
-
